@@ -1,0 +1,2 @@
+for(counter=1; counter<=10; counter++){
+ sum=sum+1;}

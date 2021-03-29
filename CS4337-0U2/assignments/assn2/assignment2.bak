@@ -1,0 +1,19 @@
+#lang scheme
+(define (sumeven lis)
+    (cond
+        ((null? lis) 0)
+        ((not(list? lis)) 0)
+        (else(cond
+            ((not(list? (car lis)))
+                (cond
+                  ((even? (car lis)) (+ (car lis) (sumeven (cdr lis))))
+                  (else (sumeven (cdr lis)))
+                )
+            )
+            (else (+ (sumeven (car lis)) (sumeven (cdr lis))))
+        ))
+    )
+)
+(display (sumeven '( 1 2 6 4 5)))
+(display "\n")
+(display (sumeven '( 1 2 6 (4 5))))
